@@ -10,13 +10,13 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
       routes: const [
-        TaskListRoute(),
+        TodoListRoute(),
         TodayRoute()
       ],
       bottomNavigationBuilder: (context, tabsRouter) {
         return BottomNavigationBar(currentIndex: tabsRouter.activeIndex, onTap: tabsRouter.setActiveIndex, items: const [
-          BottomNavigationBarItem(label: 'Tasks', icon: Icon(Icons.task)),
-          BottomNavigationBarItem(label: 'Today', icon: Icon(Icons.task)),
+          BottomNavigationBarItem(label: 'Everything', icon: Icon(Icons.all_inbox)),
+          BottomNavigationBarItem(label: 'Today', icon: Icon(Icons.today)),
         ]);
       },
     );

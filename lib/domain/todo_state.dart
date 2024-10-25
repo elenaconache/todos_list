@@ -1,0 +1,4 @@
+enum TodoState {
+  viewing,
+  editing
+}

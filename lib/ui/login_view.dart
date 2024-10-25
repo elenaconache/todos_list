@@ -12,7 +12,7 @@ class LoginView extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           child: const Text('Login'),
-          onPressed: () => context.replaceRoute(const TaskListRoute()),
+          onPressed: () => context.replaceRoute(const TodoListRoute()),
         ),
       ),
     );
