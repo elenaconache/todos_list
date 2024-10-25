@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class TaskDetailView extends StatelessWidget {
   final int taskId;
 
-  const TaskDetailView({super.key, required this.taskId});
+  const TaskDetailView({super.key, @pathParam required this.taskId});
 
   @override
   Widget build(BuildContext context) {

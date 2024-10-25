@@ -7,10 +7,8 @@ import 'package:todo_list/app_router.gr.dart';
 class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
-        RedirectRoute(path: '/', redirectTo: '/login'),
         AutoRoute(page: HomeRoute.page, path: '/home', children: [
-          RedirectRoute(path: '', redirectTo: 'tasks'),
-          AutoRoute(page: TaskListRoute.page, path: 'tasks'),
+          AutoRoute(page: TaskListRoute.page, path: 'tasks', initial: true),
           AutoRoute(page: TodayRoute.page, path: 'today'),
         ]),
         AutoRoute(initial: true, page: LoginRoute.page, path: '/login'),

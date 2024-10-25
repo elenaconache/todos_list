@@ -3,6 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'todo.freezed.dart';
 part 'todo.g.dart';
 
+// TODO: use the model instead of strings
+
 @freezed
 class Todo with _$Todo {
   const factory Todo({

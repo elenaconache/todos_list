@@ -10,11 +10,11 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i6;
 import 'package:flutter/material.dart' as _i7;
-import 'package:todo_list/home_view.dart' as _i1;
-import 'package:todo_list/login_view.dart' as _i2;
-import 'package:todo_list/task_detail_view.dart' as _i3;
-import 'package:todo_list/task_list_view.dart' as _i4;
-import 'package:todo_list/today_view.dart' as _i5;
+import 'package:todo_list/ui/home_view.dart' as _i1;
+import 'package:todo_list/ui/login_view.dart' as _i2;
+import 'package:todo_list/ui/task_detail_view.dart' as _i3;
+import 'package:todo_list/ui/task_list_view.dart' as _i4;
+import 'package:todo_list/ui/today_view.dart' as _i5;
 
 /// generated route for
 /// [_i1.HomeView]
@@ -67,6 +67,7 @@ class TaskDetailRoute extends _i6.PageRouteInfo<TaskDetailRouteArgs> {
             key: key,
             taskId: taskId,
           ),
+          rawPathParams: {'taskId': taskId},
           initialChildren: children,
         );
 
@@ -75,7 +76,10 @@ class TaskDetailRoute extends _i6.PageRouteInfo<TaskDetailRouteArgs> {
   static _i6.PageInfo page = _i6.PageInfo(
     name,
     builder: (data) {
-      final args = data.argsAs<TaskDetailRouteArgs>();
+      final pathParams = data.inheritedPathParams;
+      final args = data.argsAs<TaskDetailRouteArgs>(
+          orElse: () =>
+              TaskDetailRouteArgs(taskId: pathParams.getInt('taskId')));
       return _i3.TaskDetailView(
         key: args.key,
         taskId: args.taskId,
