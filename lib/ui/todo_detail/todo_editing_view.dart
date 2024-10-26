@@ -1,6 +1,7 @@
 import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_list/domain/todo_state.dart';
+import 'package:todo_list/localization/translations.i69n.dart';
 
 class TodoEditingView extends StatelessWidget {
   final int todoId;
@@ -9,9 +10,10 @@ class TodoEditingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const translations = Translations();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Editing Todo #$todoId'),
+        title: Text(translations.titles.editingTodo(todoId)),
         actions: [
           IconButton(
             onPressed: context.flow<TodoState>().complete,
@@ -28,7 +30,7 @@ class TodoEditingView extends StatelessWidget {
               onChanged: (_) {
                 //TODO: write state to a Cubit class
               },
-              decoration: const InputDecoration(labelText: 'Title'),
+              decoration: InputDecoration(labelText: translations.labels.title),
             )
           ],
         ),

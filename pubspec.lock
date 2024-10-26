@@ -296,6 +296,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
+  i69n:
+    dependency: "direct main"
+    description:
+      name: i69n
+      sha256: fab78379507c5a9a6e59afa384632076a051e9cce2f3f4c19c64429ef3eeffad
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   io:
     dependency: transitive
     description:

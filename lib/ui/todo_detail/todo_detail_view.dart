@@ -1,6 +1,7 @@
 import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_list/domain/todo_state.dart';
+import 'package:todo_list/localization/translations.i69n.dart';
 
 class TodoDetailView extends StatelessWidget {
   final int todoId;
@@ -12,7 +13,7 @@ class TodoDetailView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(onPressed: () => context.flow<TodoState>().complete()),
-        title: Text('Todo #$todoId'),
+        title: Text(const Translations().titles.todoItem(todoId)),
         actions: [
           IconButton(
             onPressed: () => context.flow<TodoState>().update((_) => TodoState.editing),

@@ -13,6 +13,7 @@ dependencies:
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
   flow_builder: ^0.1.0
+  i69n: ^3.0.0
 
 
 dev_dependencies:

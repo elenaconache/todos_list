@@ -1,0 +1,11 @@
+titles:
+  todoItem(int todoId): 'Todo #$todoId'
+  editingTodo(int todoId): 'Editing todo #$todoId'
+  allTodos: 'All todos'
+labels:
+  title: 'Title'
+  everything: 'Everything'
+  today: 'Today'
+buttons:
+  login: 'Login'
+
