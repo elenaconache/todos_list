@@ -4,8 +4,8 @@ import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_list/cubit/todos_cubit.dart';
-import 'package:todo_list/domain/todo.dart';
-import 'package:todo_list/domain/todo_state.dart';
+import 'package:todo_list/data/todo.dart';
+import 'package:todo_list/data/todo_state.dart';
 import 'package:todo_list/localization/translations.i69n.dart';
 
 class TodoEditingView extends StatefulWidget {
@@ -64,7 +64,7 @@ class _TodoEditingViewState extends State<TodoEditingView> {
         unawaited(context.read<TodosCubit>().editTodo(todo: _initialTodo.copyWith(title: _titleController.text)));
       }
     }
-    context.flow<TodoState>().complete();
+    context.flow<TodoDetailFlowState>().complete();
   }
 
   @override

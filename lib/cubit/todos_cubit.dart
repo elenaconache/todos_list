@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:todo_list/domain/todo.dart';
-import 'package:todo_list/repository/todos_repository.dart';
+import 'package:todo_list/data/todo.dart';
+import 'package:todo_list/data/repository/todos_repository.dart';
 
 part 'todos_cubit.freezed.dart';
 part 'todos_state.dart';

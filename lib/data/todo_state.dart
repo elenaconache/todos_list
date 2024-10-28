@@ -1,0 +1,4 @@
+enum TodoDetailFlowState {
+  viewing,
+  editing
+}

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flow_builder/flow_builder.dart';
 import 'package:todo_list/ui/todo_detail/todo_detail_view.dart';
 import 'package:todo_list/ui/todo_detail/todo_editing_view.dart';
-import 'package:todo_list/domain/todo_state.dart';
+import 'package:todo_list/data/todo_state.dart';
 
 @RoutePage()
 class TodoDetailFlow extends StatelessWidget {
@@ -13,14 +13,14 @@ class TodoDetailFlow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlowBuilder<TodoState>(
-      state: TodoState.viewing,
+    return FlowBuilder<TodoDetailFlowState>(
+      state: TodoDetailFlowState.viewing,
       onGeneratePages: (todoState, pages) {
         return switch (todoState) {
-          TodoState.viewing => [
+          TodoDetailFlowState.viewing => [
               MaterialPage(child: TodoDetailView(todoId: id)),
             ],
-          TodoState.editing => [
+          TodoDetailFlowState.editing => [
               MaterialPage(child: TodoDetailView(todoId: id)),
               MaterialPage(child: TodoEditingView(todoId: id)),
             ],

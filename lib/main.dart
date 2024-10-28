@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_list/app_router.dart';
 import 'package:todo_list/cubit/todos_cubit.dart';
 import 'package:todo_list/dependency_injection.dart';
-import 'package:todo_list/repository/todos_repository.dart';
+import 'package:todo_list/data/repository/todos_repository.dart';
 
 void main() {
   configureDependencies();

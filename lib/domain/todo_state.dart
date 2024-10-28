@@ -1,4 +1,0 @@
-enum TodoState {
-  viewing,
-  editing
-}
