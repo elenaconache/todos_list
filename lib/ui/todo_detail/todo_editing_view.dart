@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_list/cubit/todos_cubit.dart';
 import 'package:todo_list/data/models/todo.dart';
 import 'package:todo_list/data/models/todo_state.dart';
-import 'package:todo_list/localization/translations.i69n.dart';
+import 'package:todo_list/util/context_extensions.dart';
 
 class TodoEditingView extends StatefulWidget {
   final int todoId;
@@ -31,10 +31,9 @@ class _TodoEditingViewState extends State<TodoEditingView> {
 
   @override
   Widget build(BuildContext context) {
-    const translations = Translations();
     return Scaffold(
       appBar: AppBar(
-        title: Text(translations.titles.editingTodo(widget.todoId)),
+        title: Text(context.translations.titles.editingTodo(widget.todoId)),
         actions: [
           IconButton(
             onPressed: _updateTodo,
@@ -49,7 +48,7 @@ class _TodoEditingViewState extends State<TodoEditingView> {
             const SizedBox(height: 24),
             if (_initialTodo != null)
               TextField(
-                decoration: InputDecoration(labelText: translations.labels.title),
+                decoration: InputDecoration(labelText: context.translations.labels.title),
                 controller: _titleController,
               )
           ],

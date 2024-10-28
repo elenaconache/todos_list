@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter  
   auto_route: ^9.2.2
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0

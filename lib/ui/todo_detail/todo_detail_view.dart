@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_list/cubit/todos_cubit.dart';
 import 'package:todo_list/data/models/todo_state.dart';
-import 'package:todo_list/localization/translations.i69n.dart';
+import 'package:todo_list/util/context_extensions.dart';
 
 class TodoDetailView extends StatelessWidget {
   final int todoId;
@@ -16,7 +16,7 @@ class TodoDetailView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(onPressed: () => context.flow<TodoDetailFlowState>().complete()),
-        title: Text(const Translations().titles.todoItem(todoId)),
+        title: Text(context.translations.titles.todoItem(todoId)),
         actions: [
           IconButton(
             onPressed: () => context.flow<TodoDetailFlowState>().update((_) => TodoDetailFlowState.editing),

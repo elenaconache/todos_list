@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:todo_list/localization/translations.i69n.dart';
 import 'package:todo_list/navigation/app_router.gr.dart';
+import 'package:todo_list/util/context_extensions.dart';
 
 @RoutePage()
 class HomeView extends StatelessWidget {
@@ -9,7 +9,6 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const translations = Translations();
     return AutoTabsScaffold(
       routes: const [
         TodoListRoute(),
@@ -21,11 +20,11 @@ class HomeView extends StatelessWidget {
           onTap: tabsRouter.setActiveIndex,
           items: [
             BottomNavigationBarItem(
-              label: translations.labels.everything,
+              label: context.translations.labels.everything,
               icon: const Icon(Icons.all_inbox),
             ),
             BottomNavigationBarItem(
-              label: translations.labels.today,
+              label: context.translations.labels.today,
               icon: const Icon(Icons.today),
             ),
           ],

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:segment_analytics/client.dart';
+import 'package:todo_list/localization/app_localization.dart';
 import 'package:todo_list/navigation/app_router.dart';
 import 'package:todo_list/cubit/todos_cubit.dart';
 import 'package:todo_list/di/dependency_injection.dart';
@@ -37,6 +39,13 @@ class _MainAppState extends State<MainApp> {
             ScreenObserver()
           ],
         ),
+        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          AppLocalizations.delegate,
+        ],
       ),
     );
   }
