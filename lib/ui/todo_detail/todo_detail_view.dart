@@ -1,5 +1,7 @@
 import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todo_list/cubit/todos_cubit.dart';
 import 'package:todo_list/domain/todo_state.dart';
 import 'package:todo_list/localization/translations.i69n.dart';
 
@@ -10,6 +12,7 @@ class TodoDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final todo = context.read<TodosCubit>().findTodo(id: todoId);
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(onPressed: () => context.flow<TodoState>().complete()),
@@ -21,12 +24,16 @@ class TodoDetailView extends StatelessWidget {
           )
         ],
       ),
-      body: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           children: [
-            SizedBox(height: 24),
-            // TODO: read state from a cubit
+            const SizedBox(height: 24),
+            if (todo != null)
+              Text(
+                todo.title,
+                style: Theme.of(context).textTheme.titleLarge,
+              )
           ],
         ),
       ),

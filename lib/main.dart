@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_list/app_router.dart';
+import 'package:todo_list/cubit/todos_cubit.dart';
+import 'package:todo_list/dependency_injection.dart';
+import 'package:todo_list/repository/todos_repository.dart';
 
 void main() {
+  configureDependencies();
   runApp(const MainApp());
 }
 
@@ -23,8 +28,11 @@ class _MainAppState extends State<MainApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: _appRouter.config(),
+    return BlocProvider(
+      create: (context) => TodosCubit(todosRepository: getIt<TodosRepository>()),
+      child: MaterialApp.router(
+        routerConfig: _appRouter.config(),
+      ),
     );
   }
 }

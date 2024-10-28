@@ -14,7 +14,7 @@ import 'package:todo_list/ui/home_view.dart' as _i1;
 import 'package:todo_list/ui/login_view.dart' as _i2;
 import 'package:todo_list/ui/today_view.dart' as _i3;
 import 'package:todo_list/ui/todo_detail/todo_detail_flow.dart' as _i4;
-import 'package:todo_list/ui/todo_list_view.dart' as _i5;
+import 'package:todo_list/ui/todo_list/todo_list_view.dart' as _i5;
 
 /// generated route for
 /// [_i1.HomeView]

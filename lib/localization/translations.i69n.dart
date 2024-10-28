@@ -38,6 +38,7 @@ class Translations implements i69n.I69nMessageBundle {
   TitlesTranslations get titles => TitlesTranslations(this);
   LabelsTranslations get labels => LabelsTranslations(this);
   ButtonsTranslations get buttons => ButtonsTranslations(this);
+  ErrorsTranslations get errors => ErrorsTranslations(this);
   Object operator [](String key) {
     var index = key.indexOf('.');
     if (index > 0) {
@@ -51,6 +52,8 @@ class Translations implements i69n.I69nMessageBundle {
         return labels;
       case 'buttons':
         return buttons;
+      case 'errors':
+        return errors;
       default:
         return key;
     }
@@ -120,6 +123,25 @@ class ButtonsTranslations implements i69n.I69nMessageBundle {
     switch (key) {
       case 'login':
         return login;
+      default:
+        return key;
+    }
+  }
+}
+
+class ErrorsTranslations implements i69n.I69nMessageBundle {
+  final Translations _parent;
+  const ErrorsTranslations(this._parent);
+  String get generic => "Something went wrong.";
+  Object operator [](String key) {
+    var index = key.indexOf('.');
+    if (index > 0) {
+      return (this[key.substring(0, index)]
+          as i69n.I69nMessageBundle)[key.substring(index + 1)];
+    }
+    switch (key) {
+      case 'generic':
+        return generic;
       default:
         return key;
     }

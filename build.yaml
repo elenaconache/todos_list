@@ -1,6 +1,13 @@
 targets:
   $default:
     builders:
+      freezed:
+        generate_for:
+          - lib/domain/*
+          - lib/cubit/*
+      json_serializable:
+        generate_for:
+          - lib/domain/*
       auto_route_generator:auto_route_generator: # for @RoutePage
         generate_for:
           - lib/ui/**_view.dart
@@ -8,9 +15,7 @@ targets:
       auto_route_generator:auto_router_generator: # for @AutoRouterConfig
         generate_for:
           - lib/app_router.dart
-      freezed:
+      injectable_generator:
         generate_for:
-          - lib/domain/*
-      json_serializable:
-        generate_for:
-          - lib/domain/*
+          - lib/dependency_injection.dart
+          - lib/repository/*

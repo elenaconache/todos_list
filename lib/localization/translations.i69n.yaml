@@ -8,4 +8,6 @@ labels:
   today: 'Today'
 buttons:
   login: 'Login'
+errors:
+  generic: 'Something went wrong.'  
 
