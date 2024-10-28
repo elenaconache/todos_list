@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:injectable/injectable.dart';
 import 'package:segment_analytics/analytics.dart';
 import 'package:segment_analytics/client.dart';
+import 'package:segment_analytics/flush_policies/count_flush_policy.dart';
 import 'package:segment_analytics/state.dart';
 
 @lazySingleton
@@ -20,6 +21,9 @@ class AnalyticsService {
       debug: true,
       trackApplicationLifecycleEvents: true,
       maxBatchSize: 10,
+      flushPolicies: [
+        CountFlushPolicy(10)
+      ],
     ));
   }
 
