@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:rxdart/subjects.dart';
-import 'package:todo_list/data/todo.dart';
+import 'package:todo_list/data/models/todo.dart';
 
 @lazySingleton
 class TodosRepository {

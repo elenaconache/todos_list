@@ -2,7 +2,7 @@ import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_list/cubit/todos_cubit.dart';
-import 'package:todo_list/data/todo_state.dart';
+import 'package:todo_list/data/models/todo_state.dart';
 import 'package:todo_list/localization/translations.i69n.dart';
 
 class TodoDetailView extends StatelessWidget {

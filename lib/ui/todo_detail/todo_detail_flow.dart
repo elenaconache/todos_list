@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flow_builder/flow_builder.dart';
 import 'package:todo_list/ui/todo_detail/todo_detail_view.dart';
 import 'package:todo_list/ui/todo_detail/todo_editing_view.dart';
-import 'package:todo_list/data/todo_state.dart';
+import 'package:todo_list/data/models/todo_state.dart';
 
 @RoutePage()
 class TodoDetailFlow extends StatelessWidget {

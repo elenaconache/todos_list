@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:todo_list/app_router.gr.dart';
 import 'package:todo_list/localization/translations.i69n.dart';
+import 'package:todo_list/navigation/app_router.gr.dart';
 
 @RoutePage()
 class HomeView extends StatelessWidget {

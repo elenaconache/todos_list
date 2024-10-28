@@ -3,19 +3,20 @@ targets:
     builders:
       freezed:
         generate_for:
-          - lib/domain/*
+          - lib/data/models/*
           - lib/cubit/*
       json_serializable:
         generate_for:
-          - lib/domain/*
+          - lib/data/models/*
       auto_route_generator:auto_route_generator: # for @RoutePage
         generate_for:
           - lib/ui/**_view.dart
           - lib/ui/**_flow.dart
       auto_route_generator:auto_router_generator: # for @AutoRouterConfig
         generate_for:
-          - lib/app_router.dart
+          - lib/navigation/app_router.dart
       injectable_generator:
         generate_for:
-          - lib/dependency_injection.dart
-          - lib/repository/*
+          - lib/di/dependency_injection.dart
+          - lib/data/repository/*
+          - lib/data/service/*
