@@ -20,3 +20,4 @@ targets:
           - lib/di/dependency_injection.dart
           - lib/data/repository/*
           - lib/data/service/*
+          - lib/cubit/*_cubit.dart

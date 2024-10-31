@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:injectable/injectable.dart';
 import 'package:todo_list/navigation/app_router.gr.dart';
 
+@lazySingleton
 @AutoRouterConfig(
   generateForDir: [
     'lib'

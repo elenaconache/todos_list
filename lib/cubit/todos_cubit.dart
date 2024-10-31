@@ -3,12 +3,14 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:todo_list/data/models/todo.dart';
 import 'package:todo_list/data/repository/todos_repository.dart';
 
 part 'todos_cubit.freezed.dart';
 part 'todos_state.dart';
 
+@injectable
 class TodosCubit extends Cubit<TodosState> {
   final TodosRepository _todosRepository;
   late final StreamSubscription _todosSubscription;

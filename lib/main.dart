@@ -6,7 +6,6 @@ import 'package:todo_list/localization/app_localization.dart';
 import 'package:todo_list/navigation/app_router.dart';
 import 'package:todo_list/cubit/todos_cubit.dart';
 import 'package:todo_list/di/dependency_injection.dart';
-import 'package:todo_list/data/repository/todos_repository.dart';
 
 void main() {
   configureDependencies();
@@ -26,13 +25,13 @@ class _MainAppState extends State<MainApp> {
   @override
   void initState() {
     super.initState();
-    _appRouter = AppRouter();
+    _appRouter = getIt<AppRouter>();
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => TodosCubit(todosRepository: getIt<TodosRepository>()),
+      create: (context) => getIt<TodosCubit>(),
       child: MaterialApp.router(
         routerConfig: _appRouter.config(
           navigatorObservers: () => [
